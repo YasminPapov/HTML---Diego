@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+
+            const listaAlunos = []
+
+
+
+            function SalvarAlunos() { 
+
+
+                const elementoNomeAluno = document.getElementById ("NomeAluno")
+                const NomeAluno = elementoNomeAluno.value
+
+                const elementoraAluno = document.getElementById ("raAluno")
+                const raAluno = elementoraAluno.value 
+
+                const elementoemailAluno = document.getElementById ("emailAluno")
+                const emailAluno = elementoemailAluno.value
+
+                const aluno = {
+
+                    nome : NomeAluno,
+                    ra : raAluno,
+                    email : emailAluno
+
+
+                }
+
+                listaAlunos.push(aluno)
+                inserirAluno(aluno)
+            
+
+
+            }
+
+                function inserirAluno(aluno){
+
+                    const elementoConteudoAlunos = document.getElementById("conteudoAlunos")
+
+                    const elementoNovoAluno = document.createElement("p")
+
+                    elementoNovoAluno.innerHTML = aluno.ra + ": " + aluno.nome + " - " + aluno.email
+
+                    elementoConteudoAlunos.appendChild(elementoNovoAluno)
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        
+        <div>   
+            <h1> Cadastro de alunos </h1>
+
+            <h3> Formulário </h3>
+
+            <input id = "NomeAluno" placeholder="Nome">
+            <br>
+            <br>
+            <input id = "raAluno"  type="number" placeholder= "RA"> 
+            <br>
+            <br>
+            <input id = "emailAluno"  placeholder="email">
+            <br>
+            <br>
+            <button onclick="SalvarAlunos()">Salvar</button>
+        </div>
+
+        <div>
+
+            <h3> Lista de alunos </h3>
+            <div id="conteudoAlunos"></div> 
+
+        </div>
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
